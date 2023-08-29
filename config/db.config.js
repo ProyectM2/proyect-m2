@@ -1,7 +1,9 @@
 const mongoose =  require("mongoose");
+require('dotenv').config();
+
 
 mongoose
- .connect("mongodb+srv://polifonico:OmM4R726gSQiA3DV@pm.lv7cxiu.mongodb.net/")
+ .connect(process.env.URL)
  .then(() => console.info("Connected to DBATLAS")
  )
  .catch((error) => console.error("Mongoose error conecting database", error))
