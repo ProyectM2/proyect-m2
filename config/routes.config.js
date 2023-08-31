@@ -11,6 +11,7 @@ router.get("/home", home.home)
 router.get("/login", user.login)
 
 router.get("/register", user.register)
+router.post("/register", user.doRegister)
 
 
 module.exports = router

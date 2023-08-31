@@ -8,34 +8,35 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form method="POST" action="/register">
 
                 <div class="form-outline mb-4 input-group">
                   <span class="input-group-text"><i class="fa fa-fw fa-user"></i></span>
-                  <input type="text" name="name" placeholder="Name" id="form3Example1cg" class="form-control form-control-lg" />
-                  
+                  <input type="text" name="name" placeholder="Name" id="form3Example1cg" class="form-control form-control-lg" /> 
                 </div>
 
                 <div class="form-outline mb-4 input-group">
                   <span class="input-group-text"><i class="fa fa-fw fa-user"></i></span>
                   <input type="text" name="surname" placeholder="Surname" id="form3Example1cg" class="form-control form-control-lg" />
-               
+                </div>
+
+                <div class="form-outline mb-4 input-group">
+                  <span class="input-group-text"><i class="fa fa-fw fa-phone"></i></span>
+                  <input type="text" name="phonenum" placeholder="Phone Number" id="form3Example1cg" class="form-control form-control-lg" />
                 </div>
 
                 <div class="form-outline mb-4 input-group">
                   <span class="input-group-text"><i class="fa fa-fw fa-envelope"></i></span>
                   <input type="email" id="form3Example3cg" class="form-control form-control-lg" placeholder="Email"/>
-             
                 </div>
 
                 <div class="form-outline mb-4 input-group">
                   <span class="input-group-text"><i class="fa fa-fw fa-lock"></i></span>
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" placeholder="Password"/>
-                  
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" placeholder="Password"/> 
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button"
+                  <button type="submit"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                 </div>
 
