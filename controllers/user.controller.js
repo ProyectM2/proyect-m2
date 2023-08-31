@@ -11,13 +11,13 @@ module.exports.register = (req, res, next) => {
 }
 
 module.exports.doRegister = (req, res, next) => {
-    User.findOne({ phonenum: req.body.phonenum })
+    User.findOne({ email: req.body.email })
     .then((user) => {
       if (user) {
         res.render('users/register', { 
           user: req.body, 
           errors: { 
-            phonenum: 'Username already exists' 
+            email: 'Email already exists' 
           } 
         })
       } else {
