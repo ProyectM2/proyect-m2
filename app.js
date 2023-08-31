@@ -11,6 +11,9 @@ require("./config/hbs.config");
 app.set("view engine", "hbs");
 app.set("views", `${__dirname}/views`);
 
+app.use(express.urlencoded());
+app.use(morgan('dev'));
+
 // Routes
 const router = require("./config/routes.config");
 app.use(router);

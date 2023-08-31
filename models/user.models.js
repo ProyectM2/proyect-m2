@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcryp = require("bcrypt");
+const bcrypt = require("bcrypt");
 const WORK_FACTOR = 10;
 const Schema = mongoose.Schema
 
