@@ -15,4 +15,4 @@ app.set("views", `${__dirname}/views`);
 const router = require("./config/routes.config");
 app.use(router);
 
-app.listen(3000, () => console.info("Ready"));
+app.listen(3000, () => console.info("Ready")); 
