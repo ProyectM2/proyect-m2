@@ -13,7 +13,7 @@ module.exports.doLogin = (req, res, next) => {
       bcrypt.compare(req.body.password, user.password).then((match) => {
         if (match) {
           req.session.userId = user.id;
-          res.redirect(`/tweets/${user.username}`);
+          res.redirect(`/home/${user.username}`);
         } else {
           res.redirect("/login");
         }
