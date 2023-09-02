@@ -1,10 +1,28 @@
-const User = require("../models/user.models");
 const mongoose = require('mongoose');
+const User = require("../models/user.models");
+
 
 
 module.exports.login = (req, res, next) => {
     res.render("users/login")
 }
+
+module.exports.doLogin = (req, res, next) => {
+  User.findOne({ username: req.body.username }).then((user) => { 
+    if (user) {
+      bcrypt.compare(req.body.password, user.password).then((match) => {
+        if (match) {
+          req.session.userId = user.id;
+          res.redirect(`/tweets/${user.username}`);
+        } else {
+          res.redirect("/login");
+        }
+      });
+    } else {
+      res.redirect("/login");
+    }
+  });
+};
 
 module.exports.register = (req, res, next) => {
     res.render("users/register")
