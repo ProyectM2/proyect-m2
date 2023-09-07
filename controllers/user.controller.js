@@ -8,21 +8,34 @@ module.exports.login = (req, res, next) => {
 }
 
 module.exports.doLogin = (req, res, next) => {
-  User.findOne({ username: req.body.username }).then((user) => { 
-    if (user) {
-      bcrypt.compare(req.body.password, user.password).then((match) => {
-        if (match) {
-          req.session.userId = user.id;
-          res.redirect(`/home/${user.username}`);
-        } else {
-          res.redirect("/login");
-        }
-      });
-    } else {
-      res.redirect("/login");
-    }
-  });
-};
+
+  function renderInvalidUsername() {
+    res.render('users/login', {
+      user: req.body,
+      errors: {
+        password: 'Invalid username or password'
+      }
+    })
+  }
+
+  User.findOne({ email: req.body.email })
+    .then((user) => {
+      if (user) {
+        return user.checkPassword(req.body.password)
+          .then((match) => {
+            if (match) {
+              req.session.userId = user.id;
+              res.redirect('/home')
+            } else {
+              renderInvalidUsername();
+            }
+          })
+      } else {
+        renderInvalidUsername();
+      }
+    })
+    .catch((error) => next(error));
+}
 
 module.exports.register = (req, res, next) => {
     res.render("users/register")
@@ -54,4 +67,8 @@ module.exports.doRegister = (req, res, next) => {
       }
     })
     
+}
+
+module.exports.profile = (req, res, next) => {
+  res.render('users/profile', { user: req.user })
 }
