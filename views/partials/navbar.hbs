@@ -17,6 +17,13 @@
         </li>
       </ul>
 
+    {{#if currentUser}}
+      <form method="GET" action="/profile"> 
+      <button type="submit" class="btn btn-transparent">{{currentUser.email}}</button>
+      </form>
+
+      {{else}}
+
     <form method="GET" action="/login"> 
     <button type="submit" class="btn btn-primary btn-sm">Log in</button>
     </form>
@@ -24,6 +31,8 @@
     <form method="GET" action="/register">
     <button type="submit" class="btn btn-secondary btn-sm">Register</button>
     </form>
+
+    {{/if}}
 
     </div>
   </div>
