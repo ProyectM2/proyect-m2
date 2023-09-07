@@ -25,6 +25,7 @@ module.exports.Loadsessionuser = (req, res, next) => {
     .then((user) => {
       req.user = user;
       res.locals.currentUser = user;
+      console.log(user)
       next();
     })
     .catch((error) => next(error));

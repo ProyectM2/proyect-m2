@@ -11,6 +11,8 @@ router.get("/home", home.home)
 
 router.get("/login", user.login)
 router.post('/login', user.doLogin);
+router.get('/cpanel', secure.isAuthenticated , user.admin)
+router.post('/cpanel', secure.isAuthenticated, user.shipDoCreate)
 // router.get('/profile', secure.isAuthenticated, user.profile);
 
 router.get("/register", user.register)

@@ -7,21 +7,28 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Reserves</a>
         </li>
+        {{#if currentUser.admin}}
         <li class="nav-item">
-          <a class="nav-link" href="#">Sites</a>
+          <a class="nav-link" href="/cpanel">Control panel</a>
         </li>
+        {{else}}
+          <li class="nav-item">
+          <a class="nav-link" href="#">Sites</a>
+          </li>
+           {{/if}}
       </ul>
+
 
     {{#if currentUser}}
       <form method="GET" action="/profile"> 
       <button type="submit" class="btn btn-transparent">{{currentUser.email}}</button>
       </form>
-
+  
       {{else}}
 
     <form method="GET" action="/login"> 

@@ -15,5 +15,11 @@ const shipSchema = new Schema({
     active: {
         type: Boolean, default: true
         
+    },
+    imgUrls: {
+        type: String,
     }
 })
+
+const Ship = mongoose.model('Ship', shipSchema)
+module.exports = Ship;
