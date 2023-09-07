@@ -5,17 +5,38 @@
 
 <form method="POST" action="/cpanel">
   <div class="form-group">
-    <input type="name" name="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Ship name">
+    <input type="text" name="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Ship name">
   </div>
   <div class="form-group">
-    <input type="capacity" name="capacity" class="form-control" id="exampleInputcapacity" placeholder="Capacity">
+    <input type="number" name="capacity" class="form-control" id="exampleInputcapacity" placeholder="Capacity">
   </div>
     <div class="form-group">
-    <input type="avatar" name="imgUrls" class="form-control" id="exampleInputavatar" placeholder="Img url">
+    <input type="text" name="imgUrls" class="form-control" id="exampleInputavatar" placeholder="Img url">
   </div>
 
   <button type="submit" class="btn btn-primary">Create ship</button>
 </form>
 
 <h1>TRAVEL REGISTRATON</h1>
+
+<form method="POST" action="/home">
+  <div class="form-group">
+    <input type="text" name="destination" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Destination">
+  </div>
+  <div class="form-group">
+    <input type="date" name="date" class="form-control" id="exampleInputcapacity" placeholder="Capacity">
+  </div>
+  <div class="form-group">
+    <select name="ship" class="form-control" id="activeShips" placeholder="Select ship">
+        {{#each ships as |ship|}}
+          <option value="{{ship._id}}">{{ship.name}}</option>
+        {{/each}}
+    </select>
+  </div>
+  
+  
+  <button type="submit" class="btn btn-primary">Create ship</button>
+</form>
+
+
 

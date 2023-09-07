@@ -2,17 +2,15 @@ const mongoose = require('mongoose');
 const User = require("../models/user.models");
 const Ship = require("../models/ship.models")
 
-module.exports.admin = (req,res, next) => {
-  res.render("users/cpanel")
-}
 
-module.exports.shipDoCreate = (req, res, next) => {
-  Ship.create(req.body)
-    .then(() => {
-      res.redirect('/cpanel')
+module.exports.admin = (req,res, next) => {
+  Ship.find({ active: true }) 
+    .then((ships) => {
+      res.render('users/cpanel', { ships })
     })
     .catch((error) => next(error))
 }
+
 
 module.exports.login = (req, res, next) => {
     res.render("users/login")
