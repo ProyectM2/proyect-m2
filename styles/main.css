@@ -1,6 +1,10 @@
-* {
+/* * {
     overflow: hidden;
-}
+} */
 .centrado {
     text-align: center;
+}
+
+.hidden {
+    display: none;
 }
