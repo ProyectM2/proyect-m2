@@ -15,7 +15,7 @@
         <center>
         <h5 class="card-title">Ships registration</h5>
         <p class="card-text"> Choose the ship you want to add for registration </p>
-        <a href="#" class="btn btn-primary">Ship registration</a>
+        <a href="#" class="btn btn-primary" onclick="showShipRegister()">Ship registration</a>
         </center>
       </div>
     </div>
@@ -33,6 +33,12 @@
   </div>
 </div>
 
+<script>
+  function showShipRegister() {
+
+    document.getElementById('shipregister').style.display = 'block';
+  }
+</script>
 
 <center>{{>shipregister}}</center>
 <center>{{>travelregister}}</center>
