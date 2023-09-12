@@ -8,3 +8,7 @@
 .hidden {
     display: none;
 }
+
+.mxw-50 {
+    max-width: 50%;
+}
