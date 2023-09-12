@@ -26,7 +26,10 @@
 
     {{#if currentUser}}
       <form method="GET" action="/profile"> 
-      <button type="submit" class="btn btn-transparent">{{currentUser.email}}</button>
+        <button type="submit" class="btn btn-transparent">{{currentUser.email}}</button>
+      </form>
+      <form method="POST" action="/logout">
+        <button type="submit" class="btn btn-danger">Log out</button>
       </form>
   
       {{else}}
