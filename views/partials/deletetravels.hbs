@@ -1,23 +1,27 @@
 <div class="hidden" id="deletetravels"><table class="table table-striped">
     <thead>
-        <tr>
-            <th>Fecha</th>
-            <th>Destino</th>
-            <th>Registro</th>
-        </tr>
+      <tr>
+        <th>Date</th>
+        <th>Destination</th>
+        <th>Done</th>
+      </tr>
     </thead>
     <tbody>
-        {{#each travels as |travel|}}
-            <tr>
-                <td>
-                    <a href="/travel/{{ travel._id }}">
-                        {{ travel.date }}
-                    </a>
-                </td>
-                <td>{{travel.destination}}</td>
-                <td>{{travel.ship.name }}</td>
-            </tr>
-        {{/each}}
+      {{#each travels as |travel|}}
+        <tr>
+          <td>
+            <a href="/travel/{{travel._id}}">
+              {{travel.date}}
+            </a>
+          </td>
+          <td>{{travel.destination}}</td>
+          <td>
+            <form method="POST" action='cpanel'>
+                <button class="fa fa-check-square" aria-hidden="true" type="submit"></button>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
     </tbody>
-</table>
+  </table>
 </div>
