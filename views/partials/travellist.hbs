@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Destino</th>
+            <th>Registro</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each travels as |travel|}}
+            <tr>
+                <td>
+                    <a href="/travel/{{ travel._id }}">
+                        {{ travel.date }}
+                    </a>
+                </td>
+                <td>{{travel.destination}}</td>
+                <td>{{travel.ship.name }}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
