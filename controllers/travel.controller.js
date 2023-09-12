@@ -13,6 +13,7 @@ module.exports.travelDoCreate = (req, res, next) => {
             return Ship.findOneAndUpdate(
                 { _id: ship },
                 { $set: { active: false }}
+                
             )
         })
                 .then(() => {
@@ -23,9 +24,9 @@ module.exports.travelDoCreate = (req, res, next) => {
 
 module.exports.travelDelete = (req, res, next) => {
 
-    Travel.findByIdAndDelete(req.params._id)
+    Travel.findByIdAndDelete(req.params.id)
         .then(() => {
-            res.render('/cpanel') 
+            res.redirect('/cpanel') 
             document.getElementById('deletetravels').classList.remove ("hidden");
         })
         .catch((error) => next(error))
