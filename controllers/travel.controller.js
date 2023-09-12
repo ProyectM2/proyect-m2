@@ -20,3 +20,13 @@ module.exports.travelDoCreate = (req, res, next) => {
                 })
         .catch((error) => next(error))
   }
+
+module.exports.travelDelete = (req, res, next) => {
+
+    Travel.findByIdAndDelete(req.params._id)
+        .then(() => {
+            res.render('/cpanel') 
+            document.getElementById('deletetravels').classList.remove ("hidden");
+        })
+        .catch((error) => next(error))
+    }
