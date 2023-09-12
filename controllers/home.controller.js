@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const Travel = require('../models/travel.models')
 
 module.exports.home = (req, res, next) => {
