@@ -22,5 +22,6 @@ router.get("/register", user.register)
 router.post("/register", user.doRegister)
 
 router.get("/reserve", reserve.reserve)
+router.post("/logout", secure.isAuthenticated, user.logout)
 
 module.exports = router
