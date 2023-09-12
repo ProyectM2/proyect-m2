@@ -15,7 +15,7 @@
         <center>
         <h5 class="card-title">Ships registration</h5>
         <p class="card-text"> Choose the ship you want to add for registration </p>
-        <a href="#" class="btn btn-primary" id="shipbutton" onclick="showShipRegister()">Ship registration</a>
+        <a href="#" class="btn btn-primary" id="shipbutton">Ship registration</a>
         </center>
       </div>
     </div>
@@ -26,30 +26,51 @@
         <center>
         <h5 class="card-title">Travels registration</h5>
         <p class="card-text">Choose the travel you want to add for registration</p>
-        <button href="#" type="submit" class="btn btn-primary" id="travelbutton" onclick="showShipRegister()">Travel registration</a>
+        <button href="#" class="btn btn-primary" id="travelbutton">Travel registration</a>
         </center>
       </div>
     </div>
   </div>
 </div>
-
+<div class="row">
+  <div class="col-sm-6 mx-auto mt-4">
+    <div class="card">
+      <div class="card-body">
+        <center>
+        <h5 class="card-title">Remove travels</h5>
+        <p class="card-text"> Delete the old travels, or some issue </p>
+        <a href="#" class="btn btn-primary" id="deletebutton">Remove travels</a>
+        </center>
+      </div>
+    </div>
+  </div>
 <script>
 
     document.getElementById('shipbutton').addEventListener('click', ()  => {
-    console.log('Botón SHIP registration fue clickeado');
     document.getElementById('shipregister').classList.remove ("hidden");
     document.getElementById('travelregister').classList.add ("hidden");
+    document.getElementById('deletetravels').classList.add("hidden");
 })
 
 
 
     document.getElementById('travelbutton').addEventListener('click', ()  => {
-    console.log('Botón TRAVEL registration fue clickeado');
     document.getElementById('travelregister').classList.remove ("hidden");
     document.getElementById('shipregister').classList.add ("hidden");
+    document.getElementById('deletetravels').classList.add ("hidden");
+})
+
+
+    document.getElementById('deletebutton').addEventListener('click', ()  => {
+    document.getElementById('deletetravels').classList.remove ("hidden");
+    document.getElementById('travelregister').classList.add ("hidden");
+    document.getElementById('shipregister').classList.add ("hidden");
+
 })
 </script>
 
+
+<center>{{>deletetravels}}</center>
 <center>{{>shipregister}}</center>
 <center>{{>travelregister}}</center>
 
