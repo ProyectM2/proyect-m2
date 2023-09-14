@@ -1,7 +1,12 @@
 const Travel = require('../models/travel.models')
+const Ship = require('../models/ship.models');
 
 module.exports.home = (req, res, next) => {
     Travel.find({ $expr: { $lt: [{ $size: "$users" }, 15] } })
+        .populate({
+            path: 'ship',
+            select: 'name capacity'
+        })
         .then((travels) => {
             const formattedTravels = travels.map((travel) => ({
                 _id: travel._id,
@@ -12,7 +17,8 @@ module.exports.home = (req, res, next) => {
                     hour: 'numeric',
                     minute: 'numeric',
                 }),
-                destination: travel.destination
+                destination: travel.destination,
+                ship: travel.ship.name
             }));
             res.render('home', { travels: formattedTravels });
         })

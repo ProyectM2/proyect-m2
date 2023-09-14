@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const travelSchema = new Schema({
     users: {
@@ -7,8 +7,8 @@ const travelSchema = new Schema({
         required: true,
     },
     ship: {
-        type:mongoose.Schema.Types.ObjectId,
-        ref: "ship",
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Ship",
         required: true,
     },
     date: {
