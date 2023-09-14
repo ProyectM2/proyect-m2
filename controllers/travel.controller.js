@@ -24,10 +24,17 @@ module.exports.travelDoCreate = (req, res, next) => {
 
 module.exports.travelDelete = (req, res, next) => {
 
+    // const { ship } = req.body
     Travel.findByIdAndDelete(req.params.id)
-        .then(() => {
-            res.redirect('/cpanel') 
-            document.getElementById('deletetravels').classList.remove ("hidden");
+        .then((travel) => {
+            return Ship.findByIdAndUpdate(
+                travel.ship,
+                { active: true }
+            
+            )
         })
+                .then(() => {
+                    res.redirect('/cpanel')
+                })
         .catch((error) => next(error))
-    }
+  }
