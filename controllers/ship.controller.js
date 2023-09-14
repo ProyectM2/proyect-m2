@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
 const Ship = require("../models/ship.models")
+const Travel = require("../models/travel.models")
 
 module.exports.list = (req, res, next) => {
     Ship.find({ active: true })
@@ -9,7 +9,7 @@ module.exports.list = (req, res, next) => {
 
 module.exports.shipDoCreate = (req, res, next) => {
     delete req.body.active
-    Ship.create(req.body)
+    Ship.create(req.params._id)
       .then(() => {
         res.redirect('/cpanel')
       })
