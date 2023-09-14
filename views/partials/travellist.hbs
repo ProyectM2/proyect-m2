@@ -10,14 +10,14 @@
   <tbody>
     {{#each travels as |travel|}}
       <tr>
-        <td>
-          <a href="/travel/{{travel._id}}">
-            {{travel.date}}
-          </a>
-        </td>
+        <td>{{travel.date}}</td>
         <td>{{travel.destination}}</td>
         <td>{{travel.ship}}</td>
-        <td>3</td>
+        <td>
+          <a href="/travel/{{travel._id}}">
+            Travel!
+          </a>
+        </td>
       </tr>
     {{/each}}
   </tbody>
