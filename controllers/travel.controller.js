@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Ship = require("../models/ship.models");
 const Travel = require("../models/travel.models");
 
-module.exports.reserve = (req, res, next) => {
-  res.render("travels/reserve");
-};
+ module.exports.reserve = (req, res, next) => {
+     res.render("travels/reserve")
+ }
 
 module.exports.travelDoCreate = (req, res, next) => {
   const { ship } = req.body;

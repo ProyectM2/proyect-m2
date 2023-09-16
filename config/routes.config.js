@@ -3,9 +3,12 @@ const router = express.Router();
 const home = require("../controllers/home.controller")
 const user = require("../controllers/user.controller")
 const secure = require('../middlewares/secure.mid.js');
-const reserve = require("../controllers/travel.controller")
+// const reserve = require("../controllers/travel.controller")
 const travel = require("../controllers/travel.controller")
 const ship = require("../controllers/ship.controller")
+const reserve = require("../controllers/reserve.controller")
+
+
 
 router.get("/", (req, res) => res.redirect("/home"));
 
