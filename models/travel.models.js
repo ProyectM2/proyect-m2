@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const travelSchema = new Schema({
-    users: {
-        type: Array,
+    users:[{    
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
-    },
+    }],
     ship: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Ship",
