@@ -13,9 +13,48 @@
  {{> carousel }}
 </center>
 {{else}}
-  <div>
-    <h1>Page content</h1>
-    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut urna augue. Phasellus sed ex eleifend, vehicula neque facilisis, auctor sem. Nulla viverra rutrum ligula at ultrices. Vestibulum dui felis, feugiat id urna eu, consequat mollis ipsum. Cras lacinia risus a massa varius molestie. Donec maximus eleifend arcu eget scelerisque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec ultrices dolor mauris, et lacinia arcu egestas et. Etiam ut pulvinar magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse purus dui, imperdiet ac nunc id, lobortis consequat dui.</span>
+<div class="d-flex justify-content-center align-items-center" style="height: 1500px; width: 1500px; padding-top: 50px;">
+  <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/resources/carousel/1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+           <p><a class="btn btn-lg btn-primary" href="/register">Register</a></p>
+       </div>
+      </div>
+     <div class="carousel-item">
+       <img src="/resources/carousel/2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+          <p><a class="btn btn-lg btn-primary" href="/register">Register</a></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/resources/carousel/3.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+          <p><a class="btn btn-lg btn-primary" href="/register">Register</a></p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
+</div>
 
   {{/if}}
