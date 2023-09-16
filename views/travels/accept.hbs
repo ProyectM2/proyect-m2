@@ -1,0 +1,32 @@
+<h1>Hi {{currentUser.name}}</h1>
+
+<section>
+    <p>You are about to book a trip with Explore Mars to embark on a journey to one of the human colonies on Mars. You will be traveling on the {{travel.ship.name}} spacecraft. This trip is considered potentially dangerous by all space agencies worldwide, and it is quite likely that you may meet your fate due to one of the following whimsically catastrophic scenarios:</p>
+
+    <ul>
+        <li>The dramatic explosion of one or more rocket engines during liftoff, which could leave you with a rather fiery departure.</li>
+        <li>A shortage of that ever-so-crucial oxygen, leaving you breathless in more ways than one.</li>
+        <li>The extraordinary inaptitude of our pilot, who might make unconventional maneuvers, such as parallel parking in a Martian crater.</li>
+        <li>The unexpected appearance of alien forces, who may or may not appreciate your attempts at interplanetary diplomacy.</li>
+    </ul>
+
+    <p>If, despite this delightfully dramatic outlook, you still wish to accompany us, please understand that accepting this document does not immediately guarantee your throne on our spaceship, and no charges will be levied at this juncture.</p>
+
+    <p>Upon registering, we will reach out to you within an estimated 3 working days to schedule an appointment at a local medical facility for a medical examination. If deemed fit for the cosmic odyssey, we will summon you to the launch platform on the appointed day, which is {{travel.date}}. At that time, you shall make the payment of 2 million dollars and present us with 2 gallant chickens.</p>
+
+    <p>*Rest assured, the true purpose of these chickens shall remain our closely guarded secret.</p>
+
+    <p>Your destination on this journey will be {{travel.destination}}.</p>
+
+    <p>If your response to the question, "Are you sure you want to travel with us?" is an unwavering "Yes," please click on the correct option below.</p>
+</section>
+
+<div class="d-flex flex-row mb-3 justify-content-center mt-5">
+    <form class="me-3" method="POST" action="travels/accept">
+        <button type="submit" class="btn btn-outline-success">Yes, I'm sure</button>
+    </form>
+
+    <form action="/home" method="GET">
+        <button type="submit" class="btn btn-outline-danger">No, I have to think something...</button>
+    </form>
+</div>

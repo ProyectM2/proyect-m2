@@ -14,6 +14,8 @@ router.get("/home", home.home)
 router.get("/login", user.login)
 router.post('/login', user.doLogin);
 
+router.get('/travels/:id', secure.isAuthenticated, travel.accept)
+router.post('travels/accept', secure.isAuthenticated, travel.accept)
 router.get('/cpanel', secure.isAuthenticated , user.admin)
 router.post('/cpanel/:id', secure.isAuthenticated, travel.travelDelete)
 router.post('/cpanel', secure.isAuthenticated, ship.shipDoCreate)
