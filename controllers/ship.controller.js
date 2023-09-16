@@ -9,7 +9,7 @@ module.exports.list = (req, res, next) => {
 
 module.exports.shipDoCreate = (req, res, next) => {
     delete req.body.active
-    Ship.create(req.params._id)
+    Ship.create(req.body)
       .then(() => {
         res.redirect('/cpanel')
       })
