@@ -1,1 +1,24 @@
-<h1>hola</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Destino</th>
+      <th>Nave</th>
+      <th>Registro</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each travels as |travel|}}
+      <tr>
+        <td>{{travel.date}}</td>
+        <td>{{travel.destination}}</td>
+        <td>{{travel.ship}}</td>
+        <td>
+          <a href="/travel/{{travel._id}}">
+            Travel!
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
