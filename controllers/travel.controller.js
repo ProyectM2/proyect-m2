@@ -69,4 +69,4 @@ module.exports.doAccept = (req, res, next) => {
                 res.redirect('/profile')
             })
         .catch((error) => next(error))
-}
+} 
