@@ -90,8 +90,7 @@ module.exports.doRegister = (req, res, next) => {
 
 
 module.exports.profile = (req, res, next) => {
-  Travel.find({ $expr: { $lt: [{ $size: "$users" }, 15] }, 
-  users: req.body.email,
+  Travel.find({users: { $in: [req.user._id] }, 
 })
       .populate({
           path: 'ship',
