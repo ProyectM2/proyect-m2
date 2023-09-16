@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Ship = require("../models/ship.models");
 const Travel = require("../models/travel.models");
+const User = require('../models/user.models')
 
  module.exports.reserve = (req, res, next) => {
      res.render("travels/reserve")
@@ -49,5 +50,23 @@ module.exports.accept = (req, res, next) => {
 
             res.render('travels/accept', { travel: formattedTravel });
         })
+        .catch((error) => next(error))
+}
+
+module.exports.doAccept = (req, res, next) => {
+    console.log(req.params.id)
+    console.log(req.user._id)
+    Travel.findById(req.params.id)
+        .then((travel) => {
+            if(!travel.users.includes(req.user._id)) {
+                travel.users.push(req.user._id)
+                return travel.save();
+            } else {
+                return Promise.resolve(travel);
+            }
+        })
+            .then((travel) => {
+                res.redirect('/profile')
+            })
         .catch((error) => next(error))
 }
