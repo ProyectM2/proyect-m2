@@ -1,8 +1,8 @@
-const Travel = require('../models/travel.models')
-const Ship = require('../models/ship.models');
+const mongoose = require('mongoose');
+const Travel = require("../models/travel.models")
+const Ship = require("../models/ship.models")
 
-
-module.exports.home = (req, res, next) => {
+module.exports.reserve = (req, res, next) => {
     Travel.find({ $expr: { $lt: [{ $size: "$users" }, 15] } })
         .populate({
             path: 'ship',
@@ -21,8 +21,7 @@ module.exports.home = (req, res, next) => {
                 destination: travel.destination,
                 ship: travel.ship.name
             }));
-            res.render('home', { travels: formattedTravels });
+            res.render("travels/reserve", { travels: formattedTravels });
         })
         .catch((error) => next(error))
 }
-
