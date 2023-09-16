@@ -1,6 +1,7 @@
 const Travel = require('../models/travel.models')
 const Ship = require('../models/ship.models');
 
+
 module.exports.home = (req, res, next) => {
     Travel.find({ $expr: { $lt: [{ $size: "$users" }, 15] } })
         .populate({
@@ -24,3 +25,6 @@ module.exports.home = (req, res, next) => {
         })
         .catch((error) => next(error))
 }
+
+
+Travel.find({ $expr: { $lt: [{ $size: "$users" }, 15] } })

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const User = require("../models/user.models");
 const Ship = require("../models/ship.models")
-const Travel = require("../models/travel.models")
+const Travel = require("../models/travel.models");
+const { loginUser } = require('moongose/controller/user_controller');
 
 module.exports.admin = (req, res, next) => {
   Ship.find({ active: true }) 
@@ -83,8 +84,35 @@ module.exports.doRegister = (req, res, next) => {
     
 }
 
+// module.exports.profile = (req, res, next) => {
+//   res.render('users/profile', { user: req.user })
+// }
+
+
 module.exports.profile = (req, res, next) => {
-  res.render('users/profile', { user: req.user })
+  Travel.find({ $expr: { $lt: [{ $size: "$users" }, 15] }, 
+  users: req.body.email,
+})
+      .populate({
+          path: 'ship',
+          select: 'name capacity'
+      })
+      .then((travels) => {
+          const formattedTravels = travels.map((travel) => ({
+              _id: travel._id,
+              date: travel.date.toLocaleString('es-ES', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                  hour: 'numeric',
+                  minute: 'numeric',
+              }),
+              destination: travel.destination,
+              ship: travel.ship.name
+          }));
+          res.render('users/profile', { travels: formattedTravels });
+      })
+      .catch((error) => next(error))
 }
 
 module.exports.logout = (req, res, next) => {
