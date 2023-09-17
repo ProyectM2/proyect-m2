@@ -1,16 +1,18 @@
-
 <title> Realize ur reserve </title>
-<form>
-{{!-- 
-<select class="form-select" aria-label="Default select example">
-  <option selected> Open this select menu </option>
-  <option value="1">Incomgin events</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> --}}
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+{{#each travels as |travel|}}
+  <div class="card m-4" style="width: 18rem;">
+    <div class="card-body">
+      <img src="{{travel.shipImg}}" class="card-img-top mb-3" alt="...">
+      <h5 class="card-title">{{travel.ship}}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Destination: {{travel.destination}}</h6>
+      <p class="card-text">{{travel.date}}</p>
+      <a href="/travels/{{travel._id}}" class="btn btn-primary">Reserve!</a>
+    </div>
+  </div>
+{{/each}}
+</div>
 
-
-</form>
 <center>
  {{> carousel }}
 </center>
