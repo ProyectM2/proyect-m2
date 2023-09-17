@@ -1,11 +1,11 @@
 <title> Realize ur reserve </title>
 <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
 {{#each travels as |travel|}}
-  <div class="card m-4" style="width: 18rem;">
+  <div class="card text-bg-dark m-4" style="width: 18rem;">
     <div class="card-body">
-      <img src="{{travel.shipImg}}" class="card-img-top mb-3" alt="...">
+      <img src="{{travel.shipImg}}" class="card-img-top mb-3" alt="shipImg">
       <h5 class="card-title">{{travel.ship}}</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Destination: {{travel.destination}}</h6>
+      <h6 class="card-subtitle mb-2">Destination: {{travel.destination}}</h6>
       <p class="card-text">{{travel.date}}</p>
       <a href="/travels/{{travel._id}}" class="btn btn-primary">Reserve!</a>
     </div>
