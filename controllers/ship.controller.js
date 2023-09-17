@@ -1,5 +1,4 @@
 const Ship = require("../models/ship.models")
-const Travel = require("../models/travel.models")
 
 module.exports.list = (req, res, next) => {
     Ship.find({ active: true })

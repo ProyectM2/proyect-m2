@@ -1,5 +1,4 @@
 const Travel = require('../models/travel.models')
-const Ship = require('../models/ship.models');
 
 
 module.exports.home = (req, res, next) => {
