@@ -29,7 +29,7 @@ router.get('/profile', secure.isAuthenticated, user.profile);
 router.get("/register", user.register)
 router.post("/register", user.doRegister)
 
-router.get("/reserve", reserve.reserve)
+router.get("/reserve", secure.isAuthenticated, reserve.reserve)
 router.post("/logout", secure.isAuthenticated, user.logout)
 
 module.exports = router
