@@ -6,7 +6,7 @@ module.exports.reserve = (req, res, next) => {
     Travel.find({ $expr: { $lt: [{ $size: "$users" }, 15] } })
         .populate({
             path: 'ship',
-            select: 'name capacity'
+            select: 'name capacity imgUrls'
         })
         .then((travels) => {
             const formattedTravels = travels.map((travel) => ({
@@ -19,9 +19,10 @@ module.exports.reserve = (req, res, next) => {
                     minute: 'numeric',
                 }),
                 destination: travel.destination,
-                ship: travel.ship.name
+                ship: travel.ship.name,
+                shipImg: travel.ship.imgUrls
             }));
-            res.render("travels/reserve", { travels: formattedTravels });
+            res.render('travels/reserve', { travels: formattedTravels });
         })
         .catch((error) => next(error))
 }
