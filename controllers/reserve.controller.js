@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
 const Travel = require("../models/travel.models")
-const Ship = require("../models/ship.models")
 
 module.exports.reserve = (req, res, next) => {
     Travel.find({ $expr: { $lt: [{ $size: "$users" }, 15] } })

@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const User = require("../models/user.models");
 const Ship = require("../models/ship.models")
 const Travel = require("../models/travel.models");
-const { loginUser } = require('moongose/controller/user_controller');
 
 module.exports.admin = (req, res, next) => {
   Ship.find({ active: true }) 
@@ -14,8 +13,6 @@ module.exports.admin = (req, res, next) => {
     })
     .catch((error) => next(error))
 }
-
-
 
 module.exports.login = (req, res, next) => {
     res.render("users/login")

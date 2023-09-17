@@ -1,7 +1,5 @@
-const mongoose = require("mongoose");
 const Ship = require("../models/ship.models");
 const Travel = require("../models/travel.models");
-const User = require('../models/user.models')
 
  module.exports.reserve = (req, res, next) => {
      res.render("travels/reserve")
