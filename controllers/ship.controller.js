@@ -6,6 +6,9 @@ module.exports.list = (req, res, next) => {
         .catch((error) => next(error))
 }
 
+
+
+
 module.exports.shipDoCreate = (req, res, next) => {
     delete req.body.active
     Ship.create(req.body)
