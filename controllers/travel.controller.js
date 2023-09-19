@@ -32,6 +32,10 @@ module.exports.travelDelete = (req, res, next) => {
 module.exports.accept = (req, res, next) => {
     const travelId = req.params.id;
     Travel.findById(travelId)
+    .populate({
+      path: 'ship',
+      select: 'name capacity imgUrls'
+    })
         .then((travel) => {
             const formattedTravel = {
                 _id: travel._id,

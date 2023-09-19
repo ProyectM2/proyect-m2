@@ -9,11 +9,7 @@
     <tbody>
       {{#each travels as |travel|}}
         <tr>
-          <td>
-            <a href="/travel/{{travel._id}}">
-              {{travel.date}}
-            </a>
-          </td>
+          <td>{{travel.date}}</td>
           <td>{{travel.destination}}</td>
           <td>
             <form method="POST" action='cpanel/{{travel._id}}'>

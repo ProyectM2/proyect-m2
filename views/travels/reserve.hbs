@@ -1,7 +1,11 @@
+<section
+  class="vh-100 bg-image"
+  style="background-image: url(/resources/backgrounds/bg.png);"
+>
 <title> Realize ur reserve </title>
 <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
 {{#each travels as |travel|}}
-  <div class="card text-bg-dark m-4" style="width: 18rem;">
+  <div class="card text-bg-dark m-4 ff-smono" style="width: 18rem;">
     <div class="card-body">
       <img src="{{travel.shipImg}}" class="card-img-top mb-3" alt="shipImg" style="width: 100%; height: 150px;">
       <h5 class="card-title">{{travel.ship}}</h5>
@@ -14,5 +18,19 @@
 </div>
 
 <center>
- {{> carousel }}
+ <section style="font-size: 20px;" class="mt-5">
+    <p class="ff-bungee">**Important Reservation Information**</p>
+
+    <p class="f-cw ff-smono">Please note that the trips listed above are subject to date changes and availability. While we strive to provide accurate schedules, space travel can be as unpredictable as cosmic rays!</p>
+
+    <p class="ff-bungee">**Reservations Are Risk-Free!**</p>
+
+    <p class="f-cw ff-smono">Rest assured, there will be no charges at the time of registration. Registering with us does not guarantee you an immediate spot on our spacecraft. Think of it as your first step in an interstellar dance.</p>
+
+    <p class="f-cw ff-smono">Before you start choosing your favorite Martian landscapes, remember there are additional tests and evaluations required to ensure your safety and suitability for the mission. After all, we don't want you challenging Martian aliens to a game of space chess without proper training!</p>
+
+    <p class="ff-bungee">**Safety Disclaimer:**</p>
+
+    <p class="f-cw ff-smono">MarsVenture takes your safety seriously, but we also know that space is full of surprises. We're not responsible for any unexpected encounters with extraterrestrial beings, meteor showers, or space-time anomalies during your journey. Remember, you're the brave explorer here!</p>
+</section>
 </center>

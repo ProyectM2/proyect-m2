@@ -1,7 +1,12 @@
-<h1>Hi {{currentUser.name}}</h1>
+<section
+  class="vh-100 bg-image"
+  style="background-image: url(/resources/backgrounds/bg.png);"
+>
 
-<section>
-    <p>You are about to book a trip with Explore Mars to embark on a journey to one of the human colonies on Mars. You will be traveling on the {{travel.ship.name}} spacecraft. This trip is considered potentially dangerous by all space agencies worldwide, and it is quite likely that you may meet your fate due to one of the following whimsically catastrophic scenarios:</p>
+<h1 class="f-colorwhite ms-1 mt-4 ff-smono">Hi {{currentUser.name}}</h1>
+
+<section class="f-colorwhite ms-1 mt-4 ff-smono">
+    <p>You are about to book a trip with Explore Mars to embark on a journey to one of the human colonies on Mars. You will be traveling on the <span class="f-colorred">{{travel.ship}}</span> spacecraft. This trip is considered potentially dangerous by all space agencies worldwide, and it is quite likely that you may meet your fate due to one of the following whimsically catastrophic scenarios:</p>
 
     <ul>
         <li>The dramatic explosion of one or more rocket engines during liftoff, which could leave you with a rather fiery departure.</li>
@@ -16,7 +21,7 @@
 
     <p>*Rest assured, the true purpose of these chickens shall remain our closely guarded secret.</p>
 
-    <p>Your destination on this journey will be {{travel.destination}}.</p>
+    <p>Your destination on this journey will be <span class="f-colorred">{{travel.destination}}</span>.</p>
 
     <p>If your response to the question, "Are you sure you want to travel with us?" is an unwavering "Yes," please click on the correct option below.</p>
 </section>

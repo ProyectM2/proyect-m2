@@ -28,7 +28,74 @@
     font-family: 'Space Mono', monospace;
 }
 
+.ff-bungee {
+    font-family: 'Bungee Spice', cursive;
+}
+
+.f-size75 {
+    font-size: 75px;
+}
+
 .f-size24 {
     font-size: 24px;
 }
 
+.f-colorwhite {
+    color: white;
+    background-color: #333;
+    padding: 20px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
+    max-width: 100%;
+    margin: 0 auto; 
+}
+
+.f-cw {
+    color: white;
+}
+
+.f-colorred {
+    color: red;
+}
+
+.table {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto en blanco */
+    border-collapse: collapse; /* Elimina el espacio entre celdas */
+    width: 100%;
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutíl */
+}
+
+.table thead th {
+    background-color: #222; /* Color de fondo oscuro para el encabezado */
+    padding: 10px;
+    text-align: left;
+    color: white;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #333; /* Fondo oscuro para filas impares */
+}
+
+.table td, .table th {
+    padding: 10px;
+    border: 1px solid #444; /* Bordes de celdas */
+}
+
+.table a {
+    color: #ff9800; /* Color de enlace naranja */
+    text-decoration: none;
+    transition: font-size 0.2s; /* Agrega una transición de tamaño de fuente */
+}
+
+.table a:hover {
+    text-decoration: underline;
+    font-size: 110%; /* Aumenta el tamaño de fuente al 110% en el hover */
+}
