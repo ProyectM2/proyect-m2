@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const hbs = require("hbs");
+const flash = require('connect-flash');
 
 app.use(express.static("public"))
 
@@ -21,6 +22,19 @@ app.use(morgan('dev'));
 const sessionconfig = require("./config/session.config")
 app.use(sessionconfig.session);
 app.use(sessionconfig.Loadsessionuser)
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.navigationPath = req.path;
+  const fashData = req.flash('data');
+  console.log(fashData);
+  if (fashData?.length > 0) {
+    const data = JSON.parse(fashData[0]);
+    Object.keys(data)
+      .forEach((key) => res.locals[key] = data[key])
+  }
+  next();
+})
 
 // Routes
 const router = require("./config/routes.config");

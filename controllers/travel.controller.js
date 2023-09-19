@@ -20,6 +20,10 @@ module.exports.travelDoCreate = (req, res, next) => {
 module.exports.travelDelete = (req, res, next) => {
   // const { ship } = req.body
   Travel.findByIdAndDelete(req.params.id)
+  .populate({
+    path: 'ship',
+    select: 'name'
+  })
     .then((travel) => {
       return Ship.findByIdAndUpdate(travel.ship, { active: true });
     })
