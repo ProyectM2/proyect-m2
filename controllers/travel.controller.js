@@ -47,8 +47,7 @@ module.exports.accept = (req, res, next) => {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
-                    hour: 'numeric',
-                    minute: 'numeric',
+
                 }),
                 destination: travel.destination,
                 ship: travel.ship.name
